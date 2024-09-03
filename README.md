@@ -1,7 +1,7 @@
 # seagull
 ![](https://img.shields.io/github/actions/workflow/status/sweeneyngo/seagull/deploy-build.yml)
 
-My implementation of Conway's Game of Life.
+An implementation of Conway's Game of Life (CGOL, pronounced c-gull) + and simulator running in the browser. Recommended for desktops for best experience.
 
 ## Building
 Not necessarily developed with collaboration in mind, but:
