@@ -1,0 +1,31 @@
+#root {
+  margin: 0;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+.full {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.flex-h {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5rem 5rem 0rem 5rem;
+}
+
+
+/* Styles for phones */
+@media (max-width: 600px) {
+  .flex-h {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2.5rem 1rem 0rem 1rem;
+  }
+}

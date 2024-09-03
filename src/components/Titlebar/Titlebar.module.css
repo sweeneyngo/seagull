@@ -1,0 +1,19 @@
+.bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bar svg {
+    fill: var(--primary-blue);
+    padding: 0 0.2rem;
+}
+
+/* Styles for phones */
+@media (max-width: 750px) {
+    .bar {
+        position: absolute;
+        transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        margin-bottom: 5rem;
+    }
+}

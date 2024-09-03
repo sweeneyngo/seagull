@@ -1,0 +1,28 @@
+.grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* Ensure the parent container is positioned relatively */
+    background-color: var(--primary-white);
+    border: 1px solid var(--primary-gray);
+
+    flex: 1;
+    margin: 0rem 5rem 5rem 5rem;
+
+}
+
+.pan {
+    cursor: pointer;
+}
+
+canvas {
+    position: absolute;
+}
+
+/* Styles for phones */
+@media (max-width: 600px) {
+    .grid {
+        margin: 0rem 1rem 2rem 1rem;
+    }
+}

@@ -1,0 +1,140 @@
+.modalContainer {
+    /* background-color: var(--primary-gray); */
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(158, 152, 144, 0.25);
+}
+
+.titlebar {
+    display: inherit;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    margin: 0 0.75rem;
+}
+
+.titlebar div {
+    color: var(--primary-gray);
+    padding-right: 1.5rem;
+    cursor: pointer;
+    font-size: 1.25rem;
+
+    display: inherit;
+    align-items: center;
+    justify-content: center;
+}
+
+.titlebar div:hover {
+    color: var(--primary-blue);
+}
+
+.vert {
+    display: inherit;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.hori {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0rem 1.25rem;
+    padding-top: 0.75rem;
+}
+
+.dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 1.25rem;
+    padding-bottom: 0.75rem;
+    width: 15rem;
+}
+
+.dropdown select {
+    width: 100%;
+    padding: 0.3rem 0.5rem;
+    border: 1px solid #999;
+    border-radius: 2px;
+    background-color: #fff;
+    cursor: pointer;
+    appearance: none;
+
+    font-family: var(--paragraph-font);
+    color: #555;
+
+    overflow-y: auto;
+    /* Remove default dropdown arrow */
+}
+
+.horiBar {
+    border-bottom: 1px solid var(--primary-gray);
+    width: 100%;
+}
+
+.modal {
+    background-color: white;
+
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: inherit;
+    align-items: inherit;
+    justify-content: inherit;
+
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.modal h1 {
+    padding: 0.5rem;
+}
+
+.description {
+    margin-top: 0.5rem;
+}
+
+.modal p {
+    padding: 0 1.25rem;
+    margin-bottom: 0rem;
+    max-width: 18rem;
+    text-align: left;
+
+    font-size: 0.85rem;
+}
+
+
+.modal label {
+    padding-right: 0.5rem;
+}
+
+.modal input {
+    margin: 0;
+    font-family: var(--paragraph-font);
+    padding: 0.2rem 0.5rem;
+    width: 14rem;
+}
+
+.button {
+    background-color: var(--primary-blue);
+    margin: 0.5rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35rem;
+
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: rgb(109, 151, 190);
+    cursor: pointer;
+}

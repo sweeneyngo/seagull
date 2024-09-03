@@ -1,0 +1,44 @@
+.bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.button {
+    display: inherit;
+    align-items: inherit;
+    justify-content: center;
+
+    border: 2px solid var(--primary-gray);
+    border-radius: 5px;
+    height: 1.75rem;
+    width: 1.75rem;
+
+    margin: 0 0.5rem 0.45rem 0rem;
+}
+
+.button:hover {
+    background-color: rgb(235, 235, 235);
+    cursor: pointer;
+}
+
+.activeButton {
+    border: 2px solid #41617e;
+    background-color: rgb(109, 151, 190);
+    color: white;
+}
+
+.activeButton:hover {
+    background-color: rgb(109, 151, 190);
+    cursor: not-allowed;
+}
+
+.vertBar {
+    border-left: 1px solid var(--primary-gray);
+    height: 1.75rem;
+    margin: 0 0.5rem 0.45rem 0rem;
+}
+
+.speedBar {
+    width: 6.5rem;
+}
