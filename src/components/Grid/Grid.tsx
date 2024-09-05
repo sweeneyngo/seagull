@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Mode, Position, CellPosition, Size } from "../../types/types";
 import { getCell } from "../../utils/canvas";
 import styles from "./Grid.module.css";
+import { Universe } from "../../utils/run";
 
 const HEIGHT = 500;
 const WIDTH = 500;
@@ -25,16 +26,18 @@ type Draw = {
 }
 
 type Props = {
+    universe: Universe,
     mode: Mode,
     scale: number,
     cells: Set<string>,
     rle: string,
+    handleClear: () => void,
     handleCells: (cells: Set<string>) => void,
     handleScale: (newScale: number) => void,
     handleCurrentCell: (pos: CellPosition) => void
 }
 
-export default function Grid({ mode, scale, cells, rle, handleCells, handleScale, handleCurrentCell }: Props) {
+export default function Grid({ universe, mode, scale, cells, rle, handleClear, handleCells, handleScale, handleCurrentCell }: Props) {
 
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
     const [isDragging, setIsDragging] = useState(false);
@@ -119,6 +122,7 @@ export default function Grid({ mode, scale, cells, rle, handleCells, handleScale
 
         const canvas = canvasRef.current;
         if (!canvas) return newCells;
+
         // const { clientHeight: height, clientWidth: width } = canvas.parentElement || { clientHeight: HEIGHT, clientWidth: WIDTH };
 
         // const centerX = Math.floor(width / 2 / CELL_SIZE);
@@ -129,6 +133,9 @@ export default function Grid({ mode, scale, cells, rle, handleCells, handleScale
 
         const rows = rle.split("$");
 
+        // Clear universe.
+        handleClear();
+
         rows.forEach(row => {
             let num = "";
             for (let index = 0; index < row.length; index += 1) {
@@ -138,6 +145,7 @@ export default function Grid({ mode, scale, cells, rle, handleCells, handleScale
                     const freq = (num === "") ? 1 : parseInt(num);
                     for (let count = 0; count < freq; count += 1) {
                         x++;
+                        universe.setCell(x, y, 1);
                         newCells.add(`${x},${y}`);
                     }
                     num = "";
@@ -164,6 +172,7 @@ export default function Grid({ mode, scale, cells, rle, handleCells, handleScale
 
             x = 0;
         });
+
         return newCells;
     }
 
@@ -180,8 +189,14 @@ export default function Grid({ mode, scale, cells, rle, handleCells, handleScale
 
         const newCells = new Set(cells);
 
-        if (mode == Mode.DRAW) newCells.add(cellKey);
-        if (mode == Mode.ERASER) newCells.delete(cellKey);
+        if (mode == Mode.DRAW) {
+            newCells.add(cellKey);
+            universe.setCell(cell.row, cell.col, 1);
+        }
+        if (mode == Mode.ERASER) {
+            newCells.delete(cellKey);
+            universe.setCell(cell.row, cell.col, 0);
+        }
 
         handleCells(newCells);
     }
@@ -215,7 +230,6 @@ export default function Grid({ mode, scale, cells, rle, handleCells, handleScale
 
         const canvas = canvasRef.current;
         const cell = getCell(canvas, event, scale, CELL_SIZE, offset, size);
-        console.log(cell);
         if (!cell) return;
         handleCurrentCell(cell);
     }, [handleClick]);

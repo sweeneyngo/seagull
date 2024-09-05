@@ -3,6 +3,7 @@ import { FaPencil, FaEraser, FaPlay, FaPause } from "react-icons/fa6";
 import { LuTextCursorInput } from "react-icons/lu";
 import { TbTrashXFilled } from "react-icons/tb";
 import { VscDebugStepOver } from "react-icons/vsc";
+import { BsLightningChargeFill } from "react-icons/bs";
 
 import { Mode } from "../../types/types";
 import styles from "./Toolbar.module.css";
@@ -11,18 +12,20 @@ import React from "react";
 type Props = {
     isPlaying: boolean,
     speed: number,
+    stepSize: number,
     mode: Mode,
     handleMode: (newMode: Mode) => void,
     handleClear: () => void,
     handlePlay: () => void,
     handleStep: () => void,
     handleSpeed: (event: React.ChangeEvent<HTMLInputElement>) => void,
+    handleStepSize: (event: React.ChangeEvent<HTMLInputElement>) => void,
     handleModal: () => void,
 }
 
 export default function Toolbar({
-    isPlaying, speed, mode,
-    handleMode, handleClear, handlePlay, handleStep, handleSpeed, handleModal }: Props) {
+    isPlaying, speed, stepSize, mode,
+    handleMode, handleClear, handlePlay, handleStep, handleSpeed, handleStepSize, handleModal }: Props) {
 
     return (
         <div className={styles.bar}>
@@ -71,6 +74,16 @@ export default function Toolbar({
                     step="10"
                     value={speed}
                     onChange={handleSpeed} />
+            </div>
+            <div className={styles.vertBar} />
+            <div className={styles.speedBar}>
+                <input
+                    type="range"
+                    min="0"
+                    max="30"
+                    step="1"
+                    value={stepSize}
+                    onChange={handleStepSize} />
             </div>
         </div>
     );

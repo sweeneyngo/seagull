@@ -73,7 +73,7 @@ export default function Modal({ handleModal, handleRLE }: Props) {
                             id="dropdown"
                             name="dropdown"
                         >
-                            <option value=""><b>Select an option...</b></option>
+                            <option value="">Select an option...</option>
                             {Object.keys(patterns).map((key) => (
                                 <option key={key} value={key}>
                                     {key}
