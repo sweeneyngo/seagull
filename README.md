@@ -5,7 +5,7 @@ An implementation of Conway's Game of Life (CGOL, pronounced c-gull) + and simul
 
 <p align="center">
 <a href="https://ifuxyl.dev/">
-<img src="image.png" width="800"><br>
+<img src="https://i.imgur.com/isjQn9z.png" width="800"><br>
 <strong>ifuxyl.dev/seagull</a> </strong>
 </p>
 
