@@ -12,7 +12,7 @@ import './App.css';
 
 function App() {
 
-  const [universe, setUniverse] = useState<Universe>(new Universe());
+  const [universe] = useState<Universe>(new Universe());
   const [mode, setMode] = useState<Mode>(Mode.DRAW);
   const [cells, setCells] = useState<Set<string>>(new Set()); // Sparse set; tracks active cells
   const [isPlaying, setIsPlaying] = useState(false);

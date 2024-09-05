@@ -3,7 +3,6 @@ import { FaPencil, FaEraser, FaPlay, FaPause } from "react-icons/fa6";
 import { LuTextCursorInput } from "react-icons/lu";
 import { TbTrashXFilled } from "react-icons/tb";
 import { VscDebugStepOver } from "react-icons/vsc";
-import { BsLightningChargeFill } from "react-icons/bs";
 
 import { Mode } from "../../types/types";
 import styles from "./Toolbar.module.css";
