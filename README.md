@@ -6,14 +6,14 @@ An implementation of Conway's Game of Life (CGOL, pronounced c-gull) + and simul
 <p align="center">
 <a href="https://ifuxyl.dev/">
 <img src="https://i.imgur.com/isjQn9z.png" width="800"><br>
-<strong>ifuxyl.dev/seagull</a> </strong>
+<sup><strong>ifuxyl.dev/seagull</a></strong></sup>
 </p>
 
 The application is written in Typescript + [React](https://react.dev/) and built with [Vite](https://vitejs.dev/).
 Implemented with the [HashLife](https://en.wikipedia.org/wiki/Hashlife) algorithm (quadtrees & memoization).
-
 Supports edit mode, infinite canvas, zoom & pan, pattern import, and  step size & speed.
 
+See the [full article](https://www.ifuxyl.dev/blog/conway-hashlife) about seagull & HashLife!
 
 ## Building
 Not necessarily in active development, but we welcome any contributions. Feel free to submit an issue or contribute code via PR to the `main` branch.
